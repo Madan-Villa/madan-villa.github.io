@@ -1,59 +1,115 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Madan Villa &middot; Jodhpur</title>
-<meta name="description" content="Four suites and a whole-house let at Madan Villa,
- 12 Pali Road, Jodhpur. Book, message, or find your way to the gate.">
-<meta name="theme-color" content="#F5EEE3">
+<meta name="description" content="Four suites and the whole house at Madan Villa,
+ 12 Pali Road, Jodhpur. Book a room, message us, or find your way to the gate.">
+<meta name="theme-color" content="#241C17">
 <meta property="og:title" content="Madan Villa &middot; Jodhpur">
-<meta property="og:image" content="gate.jpg">
-<link rel="icon" href="gate.jpg">
+<meta property="og:description" content="Four suites behind a blue gate on 12 Pali Road.">
+<meta property="og:image" content="avatar.jpg">
+<link rel="icon" href="avatar.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Jost:wght@300;400&display=swap">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{background:#F5EEE3;color:#241C17;font-family:Jost,system-ui,sans-serif;
-  font-weight:300;-webkit-font-smoothing:antialiased}
-.wrap{max-width:460px;margin:0 auto;padding:0 20px 56px}
-.hero{position:relative;margin:0 -20px 0;height:46vw;max-height:260px;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 54%;display:block}
-.hero::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to top,#F5EEE3 0%,rgba(245,238,227,0) 46%)}
-h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:40px;
-  line-height:1;text-align:center;margin:-18px 0 0;position:relative;z-index:1}
-.sub{font-family:Jost,sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-  text-align:center;color:#8E6239;margin-top:14px}
-.rule{height:1px;background:#C79A67;opacity:.5;width:40px;margin:22px auto 26px}
-.grp{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:#8E6239;
-  margin:26px 0 10px}
-.grp:first-of-type{margin-top:0}
-a.row{display:flex;align-items:center;gap:14px;padding:15px 16px;margin-bottom:9px;
-  border:1px solid rgba(142,98,57,.28);border-radius:3px;text-decoration:none;color:#241C17;
-  background:#FBF7F0;transition:background .18s,border-color .18s,transform .18s}
-a.row:hover{background:#fff;border-color:#8E6239;transform:translateY(-1px)}
-a.row:active{transform:translateY(0)}
-.ico{width:20px;height:20px;flex:none;stroke:#8E6239;fill:none;stroke-width:1.4;
+html{background:#241C17}
+body{min-height:100vh;color:#F5EEE3;font-family:Jost,system-ui,sans-serif;
+  font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* the garden at dusk, pre-blurred on disk so the phone does not have to */
+.bg{position:fixed;inset:-6%;z-index:-2;background:url(backdrop.jpg) 50% 28%/cover;
+  transform:scale(1.06)}
+.bg::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(120% 78% at 50% 2%,rgba(36,28,23,.38) 0%,
+    rgba(36,28,23,.80) 46%,#241C17 92%)}
+
+main{max-width:440px;margin:0 auto;padding:54px 22px 56px;text-align:center}
+
+.av{width:104px;height:104px;border-radius:50%;object-fit:cover;
+  border:1px solid rgba(199,154,103,.55);box-shadow:0 0 0 7px rgba(36,28,23,.40),
+  0 18px 46px rgba(0,0,0,.55);display:block;margin:0 auto}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:38px;
+  line-height:1.05;margin:22px 0 0}
+.handle{font-size:12.5px;color:#C79A67;margin-top:9px}
+.bio{font-size:13.5px;line-height:1.65;color:rgba(245,238,227,.76);margin:14px auto 0;
+  max-width:19em}
+
+.socials{display:flex;justify-content:center;gap:11px;margin-top:24px}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(199,154,103,.34);background:rgba(58,44,34,.52);
+  transition:background .22s,border-color .22s,transform .22s}
+.socials a:hover{background:rgba(199,154,103,.22);border-color:#C79A67;
+  transform:translateY(-3px)}
+.socials svg{width:19px;height:19px}
+
+svg.i{stroke:#E6D3BA;fill:none;stroke-width:1.42;
   stroke-linecap:round;stroke-linejoin:round}
-.t{flex:1;min-width:0}
-.t b{display:block;font-weight:400;font-size:15px;letter-spacing:.01em}
-.t span{display:block;font-size:11.5px;color:#4A3B31;opacity:.82;margin-top:3px;
+
+.lbl{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(199,154,103,.9);margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+.lbl::before,.lbl::after{content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(199,154,103,.42),transparent)}
+
+a.card{display:flex;align-items:center;gap:14px;padding:10px 14px 10px 10px;
+  margin-bottom:11px;border-radius:14px;text-decoration:none;color:#F5EEE3;
+  text-align:left;border:1px solid rgba(199,154,103,.26);
+  background:rgba(58,44,34,.56);
+  box-shadow:0 10px 26px rgba(0,0,0,.3);
+  transition:background .22s,border-color .22s,transform .22s,box-shadow .22s;
+  opacity:0;animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
+a.card:hover{background:rgba(74,59,45,.72);border-color:rgba(199,154,103,.62);
+  transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.42)}
+a.card:active{transform:translateY(-1px)}
+.card.lead{padding:13px;background:rgba(199,154,103,.17);
+  border-color:rgba(199,154,103,.5)}
+.card.lead .ttl{font-size:17px}
+.card.lead .th{width:62px;height:62px}
+
+.th{width:54px;height:54px;border-radius:10px;object-fit:cover;flex:none}
+.txt{flex:1;min-width:0}
+.ttl{font-size:15.5px;font-weight:400;display:block}
+.sub{font-size:11.5px;color:rgba(230,211,186,.72);margin-top:3px;display:block;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.go{width:14px;height:14px;flex:none;stroke:#C79A67;fill:none;stroke-width:1.6}
-footer{text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-  color:#8E6239;opacity:.75;margin-top:34px;line-height:2.1}
-@media(prefers-color-scheme:dark){
-  body{background:#241C17;color:#F5EEE3}
-  .hero::after{background:linear-gradient(to top,#241C17 0%,rgba(36,28,23,0) 46%)}
-  a.row{background:rgba(245,238,227,.045);border-color:rgba(199,154,103,.3);color:#F5EEE3}
-  a.row:hover{background:rgba(245,238,227,.1);border-color:#C79A67}
-  .ico{stroke:#C79A67} .t span{color:#E6D3BA;opacity:.7}
-  .sub,.grp,footer{color:#C79A67}}
+.sc{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;color:#E6D3BA;
+  flex:none;line-height:1}
+svg.chev{width:13px;height:13px;stroke:rgba(199,154,103,.75);fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.wide{padding:14px 15px}
+.wide .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(199,154,103,.3);background:rgba(245,238,227,.05);flex:none}
+.wide .ic svg{width:17px;height:17px}
+
+footer{margin-top:38px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(199,154,103,.72);line-height:2.3}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}
+                 to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+  a.card{animation:none;opacity:1}
+  *{transition:none !important}}
 </style></head>
-<body><div class="wrap">
-<div class="hero"><img src="gate.jpg" alt="The painted gate at Madan Villa"></div>
-<h1>Madan Villa</h1>
-<div class="sub">12 Pali Road &middot; Jodhpur</div>
-<div class="rule"></div>
-<div class="grp">Find us</div><a class="row" href="https://instagram.com/madan_villa.jodhpur" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><rect x="3.2" y="3.2" width="13.6" height="13.6" rx="4"/><circle cx="10" cy="10" r="3.4"/><circle cx="14.2" cy="5.8" r=".9" fill="currentColor" stroke="none"/></svg><span class="t"><b>Instagram</b><span>@madan_villa.jodhpur</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="https://www.google.com/maps/search/?api=1&query=Madan+Villa+12+Pali+Road+Jodhpur" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M16 8.4c0 4-6 9-6 9s-6-5-6-9a6 6 0 1112 0z"/><circle cx="10" cy="8.3" r="2.1"/></svg><span class="t"><b>Directions</b><span>12 Pali Road, Jodhpur</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><div class="grp">Stay</div><a class="row" href="https://www.airbnb.co.in/rooms/755325215487498459" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M10 18c-3.3 0-5-2-5-4.2 0-1.5.7-3 2-5.4L10 3l3 5.4c1.3 2.4 2 3.9 2 5.4C15 16 13.3 18 10 18z"/></svg><span class="t"><b>Book the whole villa</b><span>Four bedrooms, one gate</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="https://www.airbnb.co.in/rooms/758333414575106476" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M10 18c-3.3 0-5-2-5-4.2 0-1.5.7-3 2-5.4L10 3l3 5.4c1.3 2.4 2 3.9 2 5.4C15 16 13.3 18 10 18z"/></svg><span class="t"><b>Banyan Suite</b><span>1 bedroom · 4.57 from 7 reviews</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="https://www.airbnb.co.in/rooms/755438091242105510" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M10 18c-3.3 0-5-2-5-4.2 0-1.5.7-3 2-5.4L10 3l3 5.4c1.3 2.4 2 3.9 2 5.4C15 16 13.3 18 10 18z"/></svg><span class="t"><b>White Tiger Suite</b><span>1 double bed · 5.0 from 4 reviews</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="https://www.airbnb.co.in/rooms/755442774059350781" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M10 18c-3.3 0-5-2-5-4.2 0-1.5.7-3 2-5.4L10 3l3 5.4c1.3 2.4 2 3.9 2 5.4C15 16 13.3 18 10 18z"/></svg><span class="t"><b>Lotus Suite</b><span>1 double bed · 4.67 from 6 reviews</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="https://www.airbnb.co.in/rooms/758324724675623517" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M10 18c-3.3 0-5-2-5-4.2 0-1.5.7-3 2-5.4L10 3l3 5.4c1.3 2.4 2 3.9 2 5.4C15 16 13.3 18 10 18z"/></svg><span class="t"><b>Peacock Suite</b><span>1 double bed · 5.0 from 2 reviews</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><div class="grp">Contact</div><a class="row" href="https://wa.me/919119253420" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 20 20"><path d="M3.4 16.6l1-3.4A6.7 6.7 0 1110 16.7a6.7 6.7 0 01-3.3-.9l-3.3.8z"/><path d="M7.6 7.4c.3-.1.6 0 .8.3l.6 1c.1.3.1.5-.1.7l-.4.5c.5.9 1.2 1.6 2.1 2l.5-.4c.2-.2.5-.2.7-.1l1 .6c.3.2.4.5.3.8-.3.8-1.2 1.2-2 .9a7.6 7.6 0 01-4.4-4.3c-.3-.8.1-1.7.9-2z"/></svg><span class="t"><b>WhatsApp</b><span>+91 91192 53420</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="tel:+919119253420"><svg class="ico" viewBox="0 0 20 20"><path d="M6.3 3.8l1.8 3-1.4 1.6c.9 1.9 2 3 3.9 3.9l1.6-1.4 3 1.8-.6 2.3c-.2.7-.9 1.1-1.6 1C8.6 15.2 4.8 11.4 4 6c-.1-.7.3-1.4 1-1.6z"/></svg><span class="t"><b>Call</b><span>+91 91192 53420</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a><a class="row" href="mailto:nalin36agarwal@gmail.com"><svg class="ico" viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="10" rx="1.6"/><path d="M3.6 6l6.4 4.6L16.4 6"/></svg><span class="t"><b>Email</b><span>nalin36agarwal@gmail.com</span></span><svg class="go" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg></a>
-<footer>Nalin Agarwal<br>Jodhpur &middot; Rajasthan, India</footer>
-</div></body></html>
+<body>
+<div class="bg"></div>
+<main>
+  <img class="av" src="avatar.jpg" alt="The painted gate at Madan Villa">
+  <h1>Madan Villa</h1>
+  <div class="handle">@madan_villa.jodhpur</div>
+  <p class="bio">Four suites behind a blue gate on 12 Pali Road, let one at a time
+     or all at once.</p>
+  <div class="socials"><a href="https://instagram.com/madan_villa.jodhpur" aria-label="Instagram" target=_blank rel=noopener><svg class="i" viewBox="0 0 20 20"><rect x="3.2" y="3.2" width="13.6" height="13.6" rx="4.2"/><circle cx="10" cy="10" r="3.3"/><circle cx="14.3" cy="5.7" r=".95" fill="currentColor" stroke="none"/></svg></a><a href="https://www.google.com/maps/search/?api=1&query=Madan+Villa+12+Pali+Road+Jodhpur" aria-label="Directions" target=_blank rel=noopener><svg class="i" viewBox="0 0 20 20"><path d="M16 8.4c0 4-6 9-6 9s-6-5-6-9a6 6 0 1112 0z"/><circle cx="10" cy="8.3" r="2.1"/></svg></a><a href="https://wa.me/919119253420" aria-label="WhatsApp" target=_blank rel=noopener><svg class="i" viewBox="0 0 20 20"><path d="M3.4 16.6l1-3.4A6.7 6.7 0 1110 16.7a6.7 6.7 0 01-3.3-.9l-3.3.8z"/><path d="M7.6 7.5c.3-.1.6 0 .8.3l.6 1c.1.3.1.5-.1.7l-.4.5c.5.9 1.2 1.6 2.1 2l.5-.4c.2-.2.5-.2.7-.1l1 .6c.3.2.4.5.3.8-.3.8-1.2 1.2-2 .9a7.6 7.6 0 01-4.4-4.3c-.3-.8.1-1.7.9-2z"/></svg></a><a href="tel:+919119253420" aria-label="Call"><svg class="i" viewBox="0 0 20 20"><path d="M6.3 3.9l1.8 3-1.4 1.6c.9 1.9 2 3 3.9 3.9l1.6-1.4 3 1.8-.6 2.3c-.2.7-.9 1.1-1.6 1C8.6 15.2 4.8 11.4 4 6c-.1-.7.3-1.4 1-1.6z"/></svg></a><a href="mailto:nalin36agarwal@gmail.com" aria-label="Email"><svg class="i" viewBox="0 0 20 20"><rect x="3" y="5.2" width="14" height="9.6" rx="1.7"/><path d="M3.7 6.1l6.3 4.5 6.3-4.5"/></svg></a></div>
+
+  <div class="lbl">Find us</div><a class="card wide" href="https://instagram.com/madan_villa.jodhpur" target="_blank" rel="noopener"><span class="ic"><svg class="i" viewBox="0 0 20 20"><rect x="3.2" y="3.2" width="13.6" height="13.6" rx="4.2"/><circle cx="10" cy="10" r="3.3"/><circle cx="14.3" cy="5.7" r=".95" fill="currentColor" stroke="none"/></svg></span><span class="txt"><b class="ttl">Instagram</b><span class="sub">@madan_villa.jodhpur</span></span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card wide" href="https://www.google.com/maps/search/?api=1&query=Madan+Villa+12+Pali+Road+Jodhpur" target="_blank" rel="noopener"><span class="ic"><svg class="i" viewBox="0 0 20 20"><path d="M16 8.4c0 4-6 9-6 9s-6-5-6-9a6 6 0 1112 0z"/><circle cx="10" cy="8.3" r="2.1"/></svg></span><span class="txt"><b class="ttl">Directions</b><span class="sub">12 Pali Road, Jodhpur</span></span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a>
+  <div class="lbl">Stay</div><a class="card lead" href="https://www.airbnb.co.in/rooms/755325215487498459" target="_blank" rel="noopener"><img class="th" src="t-villa.jpg" alt=""><span class="txt"><b class="ttl">Book the whole villa</b><span class="sub">Four bedrooms, one gate</span></span><span class="sc">4.63</span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card" href="https://www.airbnb.co.in/rooms/758333414575106476" target="_blank" rel="noopener"><img class="th" src="t-banyan.jpg" alt=""><span class="txt"><b class="ttl">Banyan Suite</b><span class="sub">1 bedroom &middot; 7 reviews</span></span><span class="sc">4.57</span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card" href="https://www.airbnb.co.in/rooms/755438091242105510" target="_blank" rel="noopener"><img class="th" src="t-whitetiger.jpg" alt=""><span class="txt"><b class="ttl">White Tiger Suite</b><span class="sub">1 double bed &middot; 4 reviews</span></span><span class="sc">5.0</span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card" href="https://www.airbnb.co.in/rooms/755442774059350781" target="_blank" rel="noopener"><img class="th" src="t-lotus.jpg" alt=""><span class="txt"><b class="ttl">Lotus Suite</b><span class="sub">1 double bed &middot; 6 reviews</span></span><span class="sc">4.67</span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card" href="https://www.airbnb.co.in/rooms/758324724675623517" target="_blank" rel="noopener"><img class="th" src="t-peacock.jpg" alt=""><span class="txt"><b class="ttl">Peacock Suite</b><span class="sub">1 double bed &middot; 2 reviews</span></span><span class="sc">5.0</span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a>
+  <div class="lbl">Contact</div><a class="card wide" href="https://wa.me/919119253420" target="_blank" rel="noopener"><span class="ic"><svg class="i" viewBox="0 0 20 20"><path d="M3.4 16.6l1-3.4A6.7 6.7 0 1110 16.7a6.7 6.7 0 01-3.3-.9l-3.3.8z"/><path d="M7.6 7.5c.3-.1.6 0 .8.3l.6 1c.1.3.1.5-.1.7l-.4.5c.5.9 1.2 1.6 2.1 2l.5-.4c.2-.2.5-.2.7-.1l1 .6c.3.2.4.5.3.8-.3.8-1.2 1.2-2 .9a7.6 7.6 0 01-4.4-4.3c-.3-.8.1-1.7.9-2z"/></svg></span><span class="txt"><b class="ttl">WhatsApp</b><span class="sub">+91 91192 53420</span></span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card wide" href="tel:+919119253420"><span class="ic"><svg class="i" viewBox="0 0 20 20"><path d="M6.3 3.9l1.8 3-1.4 1.6c.9 1.9 2 3 3.9 3.9l1.6-1.4 3 1.8-.6 2.3c-.2.7-.9 1.1-1.6 1C8.6 15.2 4.8 11.4 4 6c-.1-.7.3-1.4 1-1.6z"/></svg></span><span class="txt"><b class="ttl">Call</b><span class="sub">+91 91192 53420</span></span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a><a class="card wide" href="mailto:nalin36agarwal@gmail.com"><span class="ic"><svg class="i" viewBox="0 0 20 20"><rect x="3" y="5.2" width="14" height="9.6" rx="1.7"/><path d="M3.7 6.1l6.3 4.5 6.3-4.5"/></svg></span><span class="txt"><b class="ttl">Email</b><span class="sub">nalin36agarwal@gmail.com</span></span><svg class="chev" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"/></svg></a>
+
+  <footer>Nalin Agarwal<br>Jodhpur &middot; Rajasthan, India</footer>
+</main>
+<script>
+// stagger the cards in, in document order, rather than hard-coding a delay each
+document.querySelectorAll("a.card").forEach(function (el, i) {
+  el.style.animationDelay = (60 + i * 45) + "ms";
+});
+</script>
+</body></html>
